@@ -1,23 +1,38 @@
-// TODO: Include packages needed for this application
+// Packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
 const generateMarkdown = require('./utils/generateMarkdown.js');
 const Choices = require('inquirer/lib/objects/choices');
 
-// TODO: Create an array of questions for user input
+// Array of questions for user input
 const questions = [
-        // Title
+    // Title
     {
         type: 'input',
         name: 'project',
         message: 'What is the name of your project?',
-
+        validate: projectInput => {
+            if(projectInput) {
+                return true;
+            } else {
+                console.log('Please provide a name for your project!');
+                return false;
+            }
+        }
     },
      // Description of project
     {
         type: 'input',
         name: 'description',
-        message: 'Please write a short description of your project. (Please use full sentences.)'
+        message: 'Please write a short description of your project. (Please use full sentences.)',
+        validate: descriptionInput => {
+            if(descriptionInput) {
+                return true;
+            } else {
+                console.log('Please provide a short description of your project!')
+                return false;
+            }
+        }
     },
     // Installation instructions
     {
@@ -68,15 +83,36 @@ const questions = [
     {
         type: 'input',
         name: 'email',
-        message: 'What is your email address?'
+        message: 'What is your email address?',
+        validate: emailInput => {
+            if(emailInput) {
+                return true;
+            } else {
+                console.log('Please provide an email address so users can reach you!');
+                return false;
+            }
+        }
     }
 ];
 
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+// Function to write README file
+function writeToFile(fileName, data) {
+    fs.writeFile(fileName,data, (err)=>{
+        if(err)
+            throw err;
+        console.log('Generating README.md ...')
+    })
+}
 
-// TODO: Create a function to initialize app
-function init() {}
+// Function to initialize app
+function init() {
+    inquirer
+    .prompt(questions)
+    .then(function (userInput) {
+        console.log(userInput)
+        writeToFile("README.me", generateMarkdown(userInput));
+    })
+}
 
 // Function call to initialize app
 init();
