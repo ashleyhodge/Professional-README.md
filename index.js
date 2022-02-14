@@ -43,7 +43,7 @@ const questions = [
     // Usage information
     {
         type: 'input',
-        name: 'Using',
+        name: 'Us',
         message: 'What does the user need to know about using the repo? (Please reply in full sentences.)'
     },
     // Contribution guidelines
