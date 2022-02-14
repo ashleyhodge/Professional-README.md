@@ -2,14 +2,14 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 const generateMarkdown = require('./utils/generateMarkdown.js');
-const Choices = require('inquirer/lib/objects/choices');
+
 
 // Array of questions for user input
 const questions = [
     // Title
     {
         type: 'input',
-        name: 'project',
+        name: 'title',
         message: 'What is the name of your project?',
         validate: projectInput => {
             if(projectInput) {
@@ -63,7 +63,15 @@ const questions = [
         type: 'checkbox',
         name: 'license',
         message: 'What kind of license should your project have?',
-        choices: ['None', 'MIT', 'Apache 2.0', 'Mozilla Public License 2.0','Boost Software License']
+        choices: ['None', 'MIT', 'Apache 2.0', 'Mozilla Public License 2.0','Boost Software License'],
+        validate: licenseType => {
+            if(licenseType) {
+                return true;
+            } else {
+                console.log('Please select all that apply!')
+                return false
+            }
+        }
     },
     // Github username/ questions
     {
@@ -110,7 +118,7 @@ function init() {
     .prompt(questions)
     .then(function (userInput) {
         console.log(userInput)
-        writeToFile("README.me", generateMarkdown(userInput));
+        writeToFile("README.md", generateMarkdown(userInput));
     })
 }
 
