@@ -43,7 +43,7 @@ const questions = [
     // Usage information
     {
         type: 'input',
-        name: 'Us',
+        name: 'usage',
         message: 'What does the user need to know about using the repo? (Please reply in full sentences.)'
     },
     // Contribution guidelines
@@ -61,9 +61,9 @@ const questions = [
     // Licensing information
     {
         type: 'checkbox',
-        name: 'license',
+        name: 'licensing',
         message: 'What kind of license should your project have?',
-        choices: ['None', 'MIT', 'Apache 2.0', 'Mozilla Public License 2.0','Boost Software License'],
+        choices: ['None', 'MIT', 'Apache', 'Mozilla','Boost'],
         validate: licenseType => {
             if(licenseType) {
                 return true;
