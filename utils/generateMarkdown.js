@@ -32,7 +32,7 @@ ${data.test}
 License: ${data.licensing}
 
 ## If you have any questions, contact me at:
-* GitHub: (https://github.com/${data.github})
+* GitHub: https://github.com/${data.github}
 
 * Email: ${data.email}
 `;

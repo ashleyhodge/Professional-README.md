@@ -1,11 +1,11 @@
 
-# hfajds;
+# Professional README.md Generator
 
-![](https://img.shields.io/badge/license-None-blue)
+![](https://img.shields.io/badge/license--blue)
 
 
 ## Description
-bdsja;vb
+This application will help the user generate a professional README.me file in just a few short steps.
 
 ## Table of Contents
 * [Installation](#dependancies)
@@ -15,21 +15,21 @@ bdsja;vb
 * [Contact Info](#github)
 
 ## Instalation
-bvjds;abvkd
+To use this application you must have inquirer and fs installed.
 
 ## Usage
-bvjdskabvkdl
+To use this application, install the dependancies and run 'node index' from the command line. From that point, follow the prompts and you will have a professional README in no time!
 
 ## Contribution Guidelines
-bvska;
+If you would like to contribute, please use the contact information at the bottom of the page.
 
 ## Testing
-bvdsja;
+There are no tests that need to be run for this application.
 
 ## Licensing
-License: None
+License: 
 
 ## If you have any questions, contact me at:
-* GitHub: (https://github.com/vhdsjal)
+* GitHub: https://github.com/ashley_hodge
 
-* Email: cvdhsl
+* Email: ashhodge@comcast.net
